@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>User Prediction Overview</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f5f0e6;
+        margin: 0;
+        padding: 20px;
+        color: #4e342e;
+      }
+
+      h2 {
+        text-align: center;
+        color: #3e2723;
+        margin-bottom: 25px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #fff8f0;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+      }
+
+      th,
+      td {
+        padding: 12px 10px;
+        border: 1px solid #d7ccc8;
+        text-align: center;
+      }
+
+      th {
+        background-color: #8d6e63;
+        color: #ffffff;
+      }
+
+      td {
+        background-color: #fcefe6;
+      }
+
+      .back-link {
+        display: inline-block;
+        margin: 30px auto 0;
+        text-align: center;
+        color: #5d4037;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 16px;
+      }
+
+      .back-link:hover {
+        color: #8d6e63;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Prediction Records by User</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Radius</th>
+          <th>Texture</th>
+          <th>Perimeter</th>
+          <th>Area</th>
+          <th>Smoothness</th>
+          <th>Compactness</th>
+          <th>Concavity</th>
+          <th>Concave Points</th>
+          <th>Diagnosis</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in records %}
+        <tr>
+          <td>{{ row[0] }}</td>
+          <td>{{ row[1] }}</td>
+          <td>{{ row[2] }}</td>
+          <td>{{ row[3] }}</td>
+          <td>{{ row[4] }}</td>
+          <td>{{ row[5] }}</td>
+          <td>{{ row[6] }}</td>
+          <td>{{ row[7] }}</td>
+          <td>{{ row[8] }}</td>
+          <td>{{ row[9] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <div style="text-align: center">
+      <a class="back-link" href="/">← Back to Diagnosis Tool</a>
+    </div>
+  </body>
+</html>
